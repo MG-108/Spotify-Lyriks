@@ -64,7 +64,7 @@ const MusicPlayer = () => {
         isActive={isActive}
         activeSong={activeSong}
       />
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="flex flex-auto flex-col items-center justify-center sm:flex-1">
         <Controls
           isPlaying={isPlaying}
           isActive={isActive}

@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Error, Loader, SongCard } from "../components";
 import { genres } from "../assets/constants";
 
-import { useGetTopChartsQuery } from "../redux/services/shazamCore";
+import { useGetRapTopChartsQuery } from "../redux/services/shazamCore";
 
 const Discover = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data, isFetching, error } = useGetTopChartsQuery();
+  const { data, isFetching, error } = useGetRapTopChartsQuery();
 
   // loading data
   if (isFetching) return <Loader title="Loading songs..." />;
@@ -22,6 +22,7 @@ const Discover = () => {
         className="mt-4 mb-10 flex w-full flex-col
         items-center justify-between sm:flex-row"
       >
+        {/* HOME TEXT */}
         <h2 className="text-left text-3xl font-bold text-white">Discover</h2>
 
         {/* genres options */}

@@ -41,7 +41,6 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
             activeSong={activeSong}
           />
         </div>
-
         {/* SONG CARD IMAGE */}
         <img src={song.images?.coverart} alt="song_img" />
       </div>
