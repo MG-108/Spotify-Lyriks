@@ -5,9 +5,17 @@ import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
 const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
-  const handlePauseClick = () => {};
+  const dispatch = useDispatch();
 
-  const handlePlayClick = () => {};
+  const handlePauseClick = () => {
+    dispatch(playPause(false));
+  };
+
+  const handlePlayClick = () => {
+    dispatch(setActiveSong({ song, data, i }));
+
+    dispatch(playPause(true));
+  };
 
   return (
     <div
@@ -15,7 +23,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
        bg-white/5 bg-opacity-80 p-4 backdrop-blur-sm"
     >
       <div className="group relative h-56 w-full">
-        {/* SONG CARD ON HOVER play music */}
+        {/* SONG CARD IMAGE ON HOVER - PlayPause  */}
         <div
           className={`absolute inset-0 items-center justify-center
          bg-black bg-opacity-50 group-hover:flex
@@ -38,7 +46,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
         <img src={song.images?.coverart} alt="song_img" />
       </div>
 
-      {/* LINKS */}
+      {/* SONG CARD LINKS */}
       <div className="mt-4 flex flex-col">
         {/* music name */}
         <p className="truncate text-lg font-semibold text-white">
