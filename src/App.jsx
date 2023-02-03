@@ -33,14 +33,17 @@ const App = () => {
               <Route path="/search/:searchTerm" element={<Search />} />
             </Routes>
           </div>
-          <div className="relative top-0 h-fit xl:sticky">
+          <div className="relative top-0 h-fit xl:sticky ">
             <TopPlay />
           </div>
         </div>
       </div>
 
       {activeSong?.title && (
-        <div className="absolute bottom-0 left-0 right-0 z-10 flex h-28 animate-slideup rounded-t-3xl bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg">
+        <div
+          className="absolute bottom-0 left-0 right-0 z-10 flex h-28 animate-slideup rounded-t-3xl
+          bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg"
+        >
           <MusicPlayer />
         </div>
       )}
