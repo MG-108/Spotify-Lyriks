@@ -6,7 +6,7 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
     <div
       className={`${
         isPlaying && isActive ? "animate-[spin_3s_linear_infinite]" : ""
-      }  mr-4 hidden h-16 w-16 sm:block`}
+      }  mr-4  h-12 w-12  sm:h-16 sm:w-16`}
     >
       <img
         src={activeSong?.images?.coverart}
@@ -15,7 +15,7 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
       />
     </div>
 
-    <div className="w-[50%]">
+    <div className="w-[65%] sm:w-[50%]">
       {/* SONG TITLE */}
       <p className="truncate text-lg font-bold text-white">
         {activeSong?.title ? activeSong?.title : "No active Song"}
