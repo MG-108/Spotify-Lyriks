@@ -1,7 +1,7 @@
 import React from "react";
 
 const Track = ({ isPlaying, isActive, activeSong }) => (
-  <div className="flex w-[200px] flex-auto items-center justify-start">
+  <div className="flex w-[200px] flex-auto items-center justify-start sm:flex-1">
     {/* IMAGE  */}
     <div
       className={`${
