@@ -86,7 +86,7 @@ const TopPlay = () => {
   return (
     <div
       ref={divRef}
-      className="ml-0 mb-6 flex max-w-full flex-1 flex-col xl:ml-6 xl:mb-0 xl:min-w-[420px] xl:max-w-[450px] "
+      className="ml-0 mb-6 mt-10 flex max-w-full flex-1 flex-col md:mt-0 xl:ml-6 xl:mb-0 xl:min-w-[420px] xl:max-w-[450px] "
     >
       <div className="flex w-full flex-col">
         {/* TOP PLAY SECTION */}
@@ -121,7 +121,6 @@ const TopPlay = () => {
             <p className="cursor-pointer text-base text-gray-300">See more</p>
           </Link>
         </div>
-
         {/* TOP 10 ARTISTS */}
         <Swiper
           slidesPerView="auto"

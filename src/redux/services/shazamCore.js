@@ -17,7 +17,12 @@ export const shazamCoreApi = createApi({
     getRapTopCharts: builder.query({
       query: () => "/v1/charts/genre-world?genre_code=HIP_HOP_RAP",
     }),
+
+    getSongDetails: builder.query({
+      query: (songid) => `/v1/tracks/details?track_id=${songid}`,
+    }),
   }),
 });
 
-export const { useGetRapTopChartsQuery } = shazamCoreApi;
+export const { useGetRapTopChartsQuery, useGetSongDetailsQuery } =
+  shazamCoreApi;
