@@ -38,12 +38,16 @@ const TopChartCard = ({
       />
       {/* LINKS TO SONG PAGE AND ARTIST PAGE */}
       <div className="mx-3 flex-1 flex-col justify-center">
-        <Link to={`/song/${song.key}`}>
+        <Link to={`/songs/${song.key}`}>
           <p className="text-xl font-bold text-white"> {song?.title}</p>
         </Link>
-        <Link to={`/artists/${song?.artists[0].adamid}`}>
+        {song?.artists ? (
+          <Link to={`/artists/${song?.artists[0].adamid}`}>
+            <p className="mt-1 text-base text-gray-300  "> {song?.subtitle}</p>
+          </Link>
+        ) : (
           <p className="mt-1 text-base text-gray-300  "> {song?.subtitle}</p>
-        </Link>
+        )}
       </div>
     </div>
     <PlayPause
@@ -97,7 +101,7 @@ const TopPlay = () => {
           </Link>
         </div>
 
-        {/* TOP 5 CHARTS */}
+        {/* TOP 5 SONGS CHARTS */}
         <div className="mt-4 flex flex-col gap-1 ">
           {topPlaysData?.map((song, i) => (
             <TopChartCard
@@ -131,21 +135,27 @@ const TopPlay = () => {
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topArtistsData?.map((song, i) => (
+          {topArtistsData?.map((artist) => (
             <SwiperSlide
-              key={song?.key}
+              key={artist?.key}
               style={{ width: "25%", height: "auto" }}
               className="animate-slideright rounded-full shadow-lg"
             >
-              {/* LINK TO ARTIST DETAIL  */}
-              <Link to={`/artists/${song?.artists[0].adamid}`}>
-                {/* ARTISTS IMAGES */}
+              {artist.artists ? (
+                <Link to={`/artists/${artist?.artists[0].adamid}`}>
+                  <img
+                    src={artist?.images?.background}
+                    alt="Name"
+                    className="w-full rounded-full object-cover"
+                  />
+                </Link>
+              ) : (
                 <img
-                  src={song?.images.background}
-                  alt="name"
-                  className="w-full rounded-full object-contain"
+                  src={artist?.images?.background}
+                  alt="Name"
+                  className="w-full rounded-full object-cover"
                 />
-              </Link>
+              )}
             </SwiperSlide>
           ))}
         </Swiper>

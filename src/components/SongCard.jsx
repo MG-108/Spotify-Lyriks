@@ -47,11 +47,11 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
 
       {/* SONG CARD LINKS */}
       <div className="mt-4 flex flex-col">
-        {/* music name */}
+        {/* link songDetailPage : music name */}
         <p className="truncate text-lg font-semibold text-white">
           <Link to={`/songs/${song?.key}`}>{song.title}</Link>
         </p>
-        {/* artist name */}
+        {/* link artist name */}
         <p className="mt-1 truncate text-sm text-gray-300 ">
           <Link
             to={
