@@ -33,12 +33,12 @@ const SongDetails = () => {
   };
 
   // loading
-  if (isFetchingRelatedSongs || isFetchingRelatedSongs) {
+  if (isFetchingRelatedSongs || isFetchingSongDetails) {
     return <Loader title="Searching song details" />;
   }
 
   if (error) return <Error />;
-  console.log(error);
+  // console.log(data);
   return (
     <div className="flex flex-col">
       <DetailsHeader artistId="" songData={songData} />
@@ -50,8 +50,8 @@ const SongDetails = () => {
             songData?.sections[1].text.map((line, i) => (
               <p className="my-1 text-base text-gray-400">
                 {line}{" "}
-                {/* to add space between each stanza each line is returned like a array */}
-                {i !== songData.sections[1].text.length - 1 && <br />}
+                {/* to add breakline between each line, text is returned like a array */}
+                {i !== songData.sections[1].text.length - 1 ? <br /> : null}
               </p>
             ))
           ) : (

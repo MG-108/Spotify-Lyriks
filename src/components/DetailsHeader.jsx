@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const DetailsHeader = ({ artistId, artistData, songData }) => {
-  const artist = artistData?.artists[artistId]?.attributes;
+  const artist = artistData?.data[0]?.attributes;
 
   return (
     // GRADIENT CONTAINER
@@ -12,9 +12,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
         <img
           src={
             artistId
-              ? artistData?.artist?.artwork?.url
-                  .replace("{w}", "500")
-                  .replace("{h}", "500")
+              ? artist?.artwork?.url.replace("{w}", "500").replace("{h}", "500")
               : songData?.images?.coverart
           }
           alt="art"
@@ -37,7 +35,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
 
           {/* {ARTIST genre or SONG genre} */}
           <p className="mt-2 text-base text-gray-400">
-            {artistId ? artist?.genresNames[0] : songData?.genres?.primary}
+            {artistId ? artist?.genreNames[0] : songData?.genres?.primary}
           </p>
         </div>
       </div>

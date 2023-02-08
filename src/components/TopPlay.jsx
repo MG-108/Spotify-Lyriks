@@ -10,6 +10,7 @@ import { useGetRapTopChartsQuery } from "../redux/services/shazamCore";
 
 import "swiper/css";
 import "swiper/css/free-mode";
+import Loader from "./Loader";
 
 const TopChartCard = ({
   song,
@@ -64,18 +65,25 @@ const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   // data
-  const { data } = useGetRapTopChartsQuery();
+  const { data, isFetching } = useGetRapTopChartsQuery();
+  const divRef = useRef(null);
 
   // to scrool to the top of the page when loaded
-  const divRef = useRef(null);
-  useEffect(() => {
-    divRef.current.scrollIntoView({ behavior: "smooth" });
-  });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     divRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }, 1400);
+  // });
 
   // 5 songs
   const topPlaysData = data?.slice(0, 5);
   // 10 artists
   const topArtistsData = data?.slice(0, 10);
+
+  // loading
+  if (isFetching) {
+    return <Loader title="Searching Top Plays details" />;
+  }
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -93,7 +101,7 @@ const TopPlay = () => {
       className="ml-0 mb-6 mt-10 flex max-w-full flex-1 flex-col md:mt-0 xl:ml-6 xl:mb-0 xl:min-w-[420px] xl:max-w-[450px] "
     >
       <div className="flex w-full flex-col">
-        {/* TOP PLAY SECTION */}
+        {/* TOP CHARTS SECTION */}
         <div className="flex flex-row items-center justify-between">
           <h2 className="text-2xl font-bold text-white xl:mr-4">Top Charts</h2>
           <Link to="/top-charts">
@@ -101,7 +109,7 @@ const TopPlay = () => {
           </Link>
         </div>
 
-        {/* TOP 5 SONGS CHARTS */}
+        {/* TOP 5 SONGS  */}
         <div className="mt-4 flex flex-col gap-1 ">
           {topPlaysData?.map((song, i) => (
             <TopChartCard
@@ -142,7 +150,7 @@ const TopPlay = () => {
               className="animate-slideright rounded-full shadow-lg"
             >
               {artist.artists ? (
-                <Link to={`/artists/${artist?.artists[0].adamid}`}>
+                <Link to={`/artists/${artist?.artists[0]?.adamid}`}>
                   <img
                     src={artist?.images?.background}
                     alt="Name"
@@ -152,7 +160,7 @@ const TopPlay = () => {
               ) : (
                 <img
                   src={artist?.images?.background}
-                  alt="Name"
+                  alt={artist.subtitle}
                   className="w-full rounded-full object-cover"
                 />
               )}

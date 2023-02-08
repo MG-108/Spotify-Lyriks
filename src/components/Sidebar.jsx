@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { HiOutlineMenu } from "react-icons/hi";
 import { RiCloseLine } from "react-icons/ri";
 
@@ -29,7 +29,9 @@ const Sidebar = () => {
     <>
       {/* // OTHER DEVICES SIDEBAR */}
       <div className="hidden w-[240px] flex-col bg-[#191624] py-10 px-4 md:flex ">
-        <img src={logo} alt="logo" className="h-14 w-full object-contain" />
+        <Link to="/">
+          <img src={logo} alt="logo" className="h-14 w-full object-contain" />
+        </Link>
         <NavLinks />
       </div>
 
