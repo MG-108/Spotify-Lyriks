@@ -66,12 +66,12 @@ const TopPlay = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   // data
   const { data } = useGetRapTopChartsQuery();
-  const divRef = useRef(null);
+  // const divRef = useRef(null);
 
-  // to scrool to the top of the page when loaded
-  useEffect(() => {
-    divRef.current.scrollIntoView({ behavior: "smooth" });
-  });
+  // // to scrool to the top of the page when loaded
+  // useEffect(() => {
+  //   divRef.current.scrollIntoView({ behavior: "smooth" });
+  // });
 
   // 5 songs
   const topPlaysData = data?.slice(0, 5);
@@ -89,10 +89,7 @@ const TopPlay = () => {
   };
   // console.log(data);
   return (
-    <div
-      ref={divRef}
-      className="ml-0 mb-6 mt-10 flex max-w-full flex-1 flex-col md:mt-0 xl:ml-6 xl:mb-0 xl:min-w-[420px] xl:max-w-[450px] "
-    >
+    <div className="ml-0 mb-6 mt-10 flex max-w-full flex-1 flex-col md:mt-0 xl:ml-6 xl:mb-0 xl:min-w-[420px] xl:max-w-[450px] ">
       <div className="flex w-full flex-col">
         {/* TOP CHARTS SECTION */}
         <div className="flex flex-row items-center justify-between">
