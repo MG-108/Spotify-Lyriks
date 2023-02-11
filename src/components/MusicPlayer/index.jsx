@@ -5,6 +5,7 @@ import {
   nextSong,
   prevSong,
   playPause,
+  closeMusicPlayer,
 } from "../../redux/features/playerSlice";
 import Controls from "./Controls";
 import Player from "./Player";
@@ -58,12 +59,19 @@ const MusicPlayer = () => {
     }
   };
 
+  const handleMusicPlayer = () => {
+    if (activeSong.title) {
+      dispatch(closeMusicPlayer({}));
+    }
+  };
+
   return (
     <div className="relative flex w-full items-center justify-between px-8 sm:px-12">
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
         activeSong={activeSong}
+        handleMusicPlayer={handleMusicPlayer}
       />
       <div className="flex flex-auto flex-col items-center justify-center sm:flex-1">
         <Controls

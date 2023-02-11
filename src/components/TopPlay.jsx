@@ -23,7 +23,7 @@ const TopChartCard = ({
   // CONTAINER
   // when music is selected(active) bg highlighted
   <div
-    className={`flex w-full flex-row items-center hover:bg-[#4c426e] ${
+    className={`flex  w-full flex-row items-center hover:bg-[#4c426e] ${
       activeSong?.title === song?.title ? "bg-[#4c426e]" : "bg-transparent"
     } mb-2 cursor-pointer rounded-lg p-4 py-2
     `}
@@ -65,25 +65,18 @@ const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   // data
-  const { data, isFetching } = useGetRapTopChartsQuery();
+  const { data } = useGetRapTopChartsQuery();
   const divRef = useRef(null);
 
   // to scrool to the top of the page when loaded
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     divRef.current.scrollIntoView({ behavior: "smooth" });
-  //   }, 1400);
-  // });
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: "smooth" });
+  });
 
   // 5 songs
   const topPlaysData = data?.slice(0, 5);
   // 10 artists
   const topArtistsData = data?.slice(0, 10);
-
-  // loading
-  if (isFetching) {
-    return <Loader title="Searching Top Plays details" />;
-  }
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -126,7 +119,7 @@ const TopPlay = () => {
       </div>
 
       {/* TOP ARTISTS SECTION */}
-      <div className="mt-8 flex w-full flex-col ">
+      <div className="mt-8 flex w-full flex-col xl:mt-4 ">
         <div className="flex flex-row items-center justify-between">
           <h2 className="text-2xl font-bold text-white xl:mr-4">Top Artists</h2>
           <Link to="/top-artists">
@@ -141,7 +134,7 @@ const TopPlay = () => {
           centeredSlides
           centeredSlidesBounds
           modules={[FreeMode]}
-          className="mt-4"
+          className="mt-4 mb-4"
         >
           {topArtistsData?.map((artist) => (
             <SwiperSlide

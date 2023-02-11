@@ -14,7 +14,8 @@ const SongDetails = () => {
   const { songid } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
-  const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
+  const { data: songData, isFetching: isFetchingSongDetails } =
+    useGetSongDetailsQuery({ songid });
   const {
     data,
     isFetching: isFetchingRelatedSongs,
@@ -37,7 +38,7 @@ const SongDetails = () => {
   }
 
   if (error) return <Error />;
-  console.log(data);
+  // console.log(data);
   return (
     <div className="flex flex-col">
       <DetailsHeader artistId="" songData={songData} />

@@ -8,17 +8,17 @@ import {
 
 export const genres = [
   { title: "Hip-Hop", value: "HIP_HOP_RAP" },
+  { title: "Worldwide", value: "WORLDWIDE" },
   { title: "Electronic", value: "ELECTRONIC" },
   { title: "Reggae", value: "REGGAE_DANCE_HALL" },
   { title: "Latin", value: "LATIN" },
   { title: "Rock", value: "ROCK" },
+  { title: "Pop", value: "POP" },
   { title: "House", value: "HOUSE" },
   { title: "Dance", value: "DANCE" },
   { title: "Soul", value: "SOUL_RNB" },
-  { title: "Pop", value: "POP" },
   { title: "Country", value: "COUNTRY" },
   { title: "Alternative", value: "ALTERNATIVE" },
-  { title: "Worldwide", value: "WORLDWIDE" },
 ];
 
 export const links = [

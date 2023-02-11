@@ -1,6 +1,7 @@
 import React from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-const Track = ({ isPlaying, isActive, activeSong }) => (
+const Track = ({ isPlaying, isActive, activeSong, handleMusicPlayer }) => (
   <div className="flex w-[200px] flex-auto items-center justify-start sm:flex-1">
     {/* IMAGE  */}
     <div
@@ -25,6 +26,13 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
         {activeSong?.subtitle ? activeSong?.subtitle : "No active Song"}
       </p>
     </div>
+    <button type="button">
+      <AiFillCloseCircle
+        size={20}
+        className="text-white"
+        onClick={handleMusicPlayer}
+      />
+    </button>
   </div>
 );
 

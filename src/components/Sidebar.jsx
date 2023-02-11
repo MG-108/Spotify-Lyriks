@@ -14,6 +14,7 @@ const NavLinks = ({ handleClick }) => (
         to={item.to}
         onClick={() => handleClick && handleClick()}
         className=" my-8 ml-2 flex flex-row items-center justify-start text-sm font-medium text-gray-400 hover:text-cyan-400"
+        end
       >
         <item.icon className="mr-2 h-6 w-6" />
         {item.name}
@@ -58,7 +59,7 @@ const Sidebar = () => {
          }`}
       >
         <img src={logo} alt="logo" className="h-14 w-full object-contain" />
-        {/* close sidebar Menu */}
+        {/* close sidebar Menu after link clicked */}
         <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
     </>

@@ -19,6 +19,10 @@ export const shazamCoreApi = createApi({
       query: () => "/v1/charts/genre-world?genre_code=HIP_HOP_RAP",
     }),
 
+    getSongsByGenre: builder.query({
+      query: (genre) => `/v1/charts/genre-world?genre_code=${genre}`,
+    }),
+
     getSongDetails: builder.query({
       query: ({ songid }) => `/v1/tracks/details?track_id=${songid}`,
     }),
@@ -34,13 +38,19 @@ export const shazamCoreApi = createApi({
     getRapSongsByCountry: builder.query({
       query: (countryCode) => `v1/charts/country?country_code=${countryCode}`,
     }),
+
+    getTopCharts: builder.query({
+      query: () => "/v1/charts/world",
+    }),
   }),
 });
 
 export const {
   useGetRapTopChartsQuery,
+  useGetSongsByGenreQuery,
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
   useGetArtistDetailsQuery,
   useGetRapSongsByCountryQuery,
+  useGetTopChartsQuery,
 } = shazamCoreApi;
