@@ -66,12 +66,6 @@ const TopPlay = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   // data
   const { data } = useGetRapTopChartsQuery();
-  // const divRef = useRef(null);
-
-  // // to scrool to the top of the page when loaded
-  // useEffect(() => {
-  //   divRef.current.scrollIntoView({ behavior: "smooth" });
-  // });
 
   // 5 songs
   const topPlaysData = data?.slice(0, 5);

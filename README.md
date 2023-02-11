@@ -1,136 +1,31 @@
-# Project Lyrics
+<h1>Lyriks</h1>
 
-Develop an elegant React.js Music Application. 
+<!-- IMG -->
 
-Check out the complete project requirements [here](https://docs.google.com/document/d/13PeFwRlPEhMw_HPyrIrInvQuKaVWnpNmcv-y3NA208s/edit?usp=sharing)
+<h2>Project Description</h2>
+<p>Lyriks is a sleek and modern music player application that combines the power of React and Tailwind CSS. This app utilizes the <a href="https://rapidapi.com/tipsters/api/shazam-core">Shazam Core API</a> to fetch all the relevant information about songs and present it in a user-friendly manner. With its fully responsive design, you can enjoy your music on any device with ease. Whether you're a casual listener, Lyriks has got you covered.</p>
 
-# Contributing
+<h2>Application Features</h2>
+<ul>
+  <li>Intuitive Song Search: Quickly search for your favorite songs by name .</li>
+  <li>Discover Page: Explore new music by browsing songs sorted by genre.</li>
+  <li>HIP_HOP_RAP Top Charts and Artists Section: Stay up-to-date on the latest trends in HIP_HOP_RAP music with our curated charts and artist listings.</li>
+  <li>Seamless Playback: Enjoy your music with ease thanks to seamless playback functionality.</li>
+  <li>In-Depth Song Information: View detailed information about each song, including lyrics and related tracks, on the song detail page.</li>
+  <li>Artist Profiles: Get to know your favorite artists better by exploring their top 10 songs on the artist detail page.</li>
+  <li>Local Music Trends: Stay connected to the local music scene with our "Around You" feature, which shows you the most popular songs in your country.</li>
+  <li>Global Top Charts and Artists pages: Keep tabs on the world's hottest music with our global top charts and artist listings, covering all genres.</li>
+</ul>
 
-When contributing to this repository, please first discuss the change you wish to make via issue.
-Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
+<h2>Technologies used</h2>
+<ul>
+  <li><a href="https://reactjs.org/">React</a> - JavaScript library for building user interfaces</li>
+  <li><a href="https://tailwindcss.com/">Tailwind CSS</a> - Utility-first CSS framework for building responsive designs</li>
+  <li><a href="https://redux.js.org/">Redux</a> - Library for managing application state</li>
+  <li><a href="https://reactrouter.com/web/guides/quick-start">react-router-dom</a> - Library for handling client-side routing in React</li>
+  <li><a href="https://github.com/axios/axios">axios</a> - Promise-based HTTP client for making API requests</li>
+  <li><a href="https://swiperjs.com/">Swiper</a> - Library for creating touch-enabled slideshows</li>
+</ul>
 
-
-## System Requirements
-
-To get started with development, you need to install few tools
-
-1. git 
-   
-   `git` version 2.13.1 or higher. Download [git](https://git-scm.com/downloads) if you don't have it already.
-
-   To check your version of git, run:
-
-   ```shell
-    git --version
-   ```
-
-2. node 
-   
-   `node` version 16.15.1 or higher. Download [node](https://nodejs.org/en/download/) if you don't have it already.
-
-   To check your version of node, run:
-
-   ```shell
-    node --version
-   ```
-
-3. npm
-  
-   `npm` version 5.6.1 or higher. You will have it after you install node.
-
-   To check your version of npm, run:
-
-   ```shell
-    npm --version
-   ```
-
-## Setup
-
-To set up a development environment, please follow these steps:
-
-1. Clone the repo
-
-   ```shell
-    git clone https://github.com/JavaScript-Mastery-PRO/project1_team4_repository.git
-   ```
-
-2. Change directory to the project directory
-
-    ```shell
-    cd project1_team4_repository
-    ```
-
-3. Install the dependencies
-   
-    ```shell
-     npm install
-    ```
-
-    If you get an error, please check the console for more information.
-
-    If you don't get an error, you are ready to start development.
-
-4. Run the app
-   
-    ```shell
-    npm run dev
-    ```
-
-    Project will be running in the browser.
-
-    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-## Issues
-
-You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/orgs/JavaScript-Mastery-PRO/projects/8). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
-
-Please try to create bug reports that are:
-
-- _Reproducible._ Include steps to reproduce the problem.
-- _Specific._ Include as much detail as possible: which version, what environment, etc.
-- _Unique._ Do not duplicate existing opened issues.
-- _Scoped to a Single Bug._ One bug per report.
-
-
-## Pull Request
-
-There are 2 main work flows when dealing with pull requests:
-
-* Pull Request from a [forked repository](https://help.github.com/articles/fork-a-repo)
-* Pull Request from a branch within a repository
-
-Here we are going to focus on 2. Creating a Topical Branch:
-
-
-1. First, we will need to create a branch from the latest commit on master. Make sure your repository is up to date first using
-
-   ```bash
-    git pull origin main
-   ```
-
-   *Note:* `git pull` does a `git fetch` followed by a `git merge` to update the local repo with the remote repo. For a more detailed explanation, see [this stackoverflow post](http://stackoverflow.com/questions/292357/whats-the-difference-between-git-pull-and-git-fetch).
-
-2. To create a branch, use `git checkout -b <new-branch-name> [<base-branch-name>]`, where `base-branch-name` is optional and defaults to `main`. 
-   
-   Use a standard convention for branch names. For example, `<your-name>-dev`. It will be easier to track your pull requests if you use this convention.
-   
-   I'm going to create a new branch called `jsm-dev` from the `main` branch and push it to github.
-
-   ```bash
-    git checkout -b jsm-dev main
-    git push origin jsm-dev
-   ```
-
-3. To create a pull request, you must have changes committed to your new branch.
-
-4. Go to [Pull Requests](https://github.com/JavaScript-Mastery-PRO/project1_team4_repository/pulls) and click on the `New Pull Request` button.
-
-5. Select the `main` branch as the `base` branch and the `jsm-dev` branch as the `compare` branch.
-
-6. Follow the template and fill in the proper information for the pull request.
-
-7. Click on the `Submit` button.
-
-8. You have successfully created a pull request. Now wait for mentor approval. Once approved, you can merge the pull request.
-
-#
+<h2>Author</h2>
+<p>- Matheus Ghignatti- <a href="https://github.com/MG-108">Github Profile</a></p>
