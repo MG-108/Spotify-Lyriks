@@ -13,7 +13,8 @@
   <li>Seamless Playback: Enjoy your music with ease thanks to seamless playback functionality.</li>
   <li>In-Depth Song Information: View detailed information about each song, including lyrics and related tracks, on the song detail page.</li>
   <li>Artist Profiles: Get to know your favorite artists better by exploring their top 10 songs on the artist detail page.</li>
-  <li>Local Music Trends: Stay connected to the local music scene with our "Around You" feature, which shows you the most popular songs in your country.</li>
+  <li>Local Music Trends: Stay connected to the local music scene on the Around You page feature with
+  <a href="https://geo.ipify.org/"> Geolocation API</a>, which shows you the most popular songs in your country.</li>
   <li>Global Top Charts and Artists pages: Keep tabs on the world's hottest music with our global top charts and artist listings, covering all genres.</li>
 </ul>
 
