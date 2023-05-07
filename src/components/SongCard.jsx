@@ -17,6 +17,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
     dispatch(playPause(true));
   };
 
+  console.log(song);
   return (
     <div
       className="flex w-[250px] animate-slideup cursor-pointer flex-col rounded-lg

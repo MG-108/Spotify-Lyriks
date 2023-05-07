@@ -11,8 +11,9 @@ const Discover = () => {
   const { activeSong, isPlaying, genreListId } = useSelector(
     (state) => state.player
   );
+
   const { data, isFetching, error } = useGetSongsByGenreQuery(
-    genreListId || "HIP_HOP_RAP"
+    genreListId || "genre-global-chart-2"
   );
 
   // loading data
@@ -21,7 +22,7 @@ const Discover = () => {
   if (error) return <Error />;
 
   const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
-  // console.log(data);
+
   return (
     <div className="flex flex-col">
       <div
@@ -49,7 +50,7 @@ const Discover = () => {
 
       {/* {DATA} */}
       <div className="flex flex-wrap justify-center gap-8 sm:justify-start">
-        {data?.map((song, i) => (
+        {data?.tracks?.map((song, i) => (
           <SongCard
             key={song.key}
             song={song}

@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const shazamCoreApi = createApi({
   reducerPath: "shazamCoreApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://shazam-core.p.rapidapi.com",
+    baseUrl: "https://shazam.p.rapidapi.com",
     prepareHeaders: (headers) => {
       headers.set(
         "X-RapidAPI-Key",
@@ -15,24 +15,27 @@ export const shazamCoreApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getRapTopCharts: builder.query({
-      query: () => "/v1/charts/genre-world?genre_code=HIP_HOP_RAP",
+    getUsaTopCharts: builder.query({
+      query: () =>
+        "charts/track?locale=en-US&listId=ip-country-chart-US&pageSize=20&startFrom=0",
     }),
 
     getSongsByGenre: builder.query({
-      query: (genre) => `/v1/charts/genre-world?genre_code=${genre}`,
+      query: (genre) =>
+        `/charts/track?locale=en-US&listId=${genre}&pageSize=20&startFrom=0`,
     }),
 
     getSongDetails: builder.query({
-      query: ({ songid }) => `/v1/tracks/details?track_id=${songid}`,
+      query: ({ songid }) => `/songs/get-details?key=${songid}&locale=en-US'`,
     }),
 
     getSongRelated: builder.query({
-      query: ({ songid }) => `/v1/tracks/related?track_id=${songid}`,
+      query: ({ songid }) =>
+        `/songs/list-recommendations?key=${songid}&locale=en-US`,
     }),
 
     getArtistDetails: builder.query({
-      query: (artistId) => `/v2/artists/details?artist_id=${artistId}`,
+      query: (artistid) => `/artists/get-details?id=${artistid}=en-US`,
     }),
 
     getRapSongsByCountry: builder.query({
@@ -40,18 +43,18 @@ export const shazamCoreApi = createApi({
     }),
 
     getTopCharts: builder.query({
-      query: () => "/v1/charts/world",
+      query: () => "charts/track?locale=en-US&pageSize=20&startFrom=0",
     }),
 
     getSongsBySearch: builder.query({
       query: (searchTerm) =>
-        `/v1/search/multi?query=${searchTerm}&search_type=SONGS_ARTISTS`,
+        `/search?term=${searchTerm}&locale=en-US&offset=0&limit=5`,
     }),
   }),
 });
 
 export const {
-  useGetRapTopChartsQuery,
+  useGetUsaTopChartsQuery,
   useGetSongsByGenreQuery,
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,

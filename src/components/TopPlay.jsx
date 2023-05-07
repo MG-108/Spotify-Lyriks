@@ -6,7 +6,7 @@ import { FreeMode } from "swiper";
 
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useGetRapTopChartsQuery } from "../redux/services/shazamCore";
+import { useGetUsaTopChartsQuery } from "../redux/services/shazamCore";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -64,13 +64,13 @@ const TopChartCard = ({
 const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  // data
-  const { data } = useGetRapTopChartsQuery();
+
+  const { data } = useGetUsaTopChartsQuery();
 
   // 5 songs
-  const topPlaysData = data?.slice(0, 5);
+  const topPlaysData = data?.tracks.slice(0, 5);
   // 10 artists
-  const topArtistsData = data?.slice(0, 10);
+  const topArtistsData = data?.tracks.slice(0, 10);
 
   const handlePauseClick = () => {
     dispatch(playPause(false));

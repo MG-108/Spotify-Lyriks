@@ -39,7 +39,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
           </p>
         </div>
       </div>
-      {/* to give some space between the gradient and the content */}
+      {/* to give some space between(y) the gradient and the content */}
       <div className="h-24 w-full sm:h-44" />
     </div>
   );

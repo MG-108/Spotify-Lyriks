@@ -12,10 +12,8 @@ const RelatedSongs = ({
     <h1 className="text-3xl font-bold text-white">
       {artistId ? "Top Songs" : "Related Songs"}
     </h1>
-    {/* {console.log(data)} */}
-
     <div className="mt-6 flex w-full flex-col">
-      {data.map((song, i) => (
+      {data?.tracks.map((song, i) => (
         <SongBar
           key={i}
           song={song}
@@ -27,6 +25,7 @@ const RelatedSongs = ({
           handlePlayClick={handlePlayClick}
         />
       ))}
+      {console.log(data)}
     </div>
   </div>
 );
