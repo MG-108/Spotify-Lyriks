@@ -2,6 +2,10 @@
 
 <!-- IMG -->
 
+
+![lyrics](https://user-images.githubusercontent.com/109861614/218283532-b79b6f98-0bf5-4987-b1fd-f959a3c12d5c.png)
+
+
 <h2>Project Description</h2>
 <p>Lyriks is a sleek and modern music player application that combines the power of React and Tailwind CSS. This app utilizes the <a href="https://rapidapi.com/tipsters/api/shazam-core">Shazam Core API</a> to fetch all the relevant information about songs and present it in a user-friendly manner. With its fully responsive design, you can enjoy your music on any device with ease. Whether you're a casual listener, Lyriks has got you covered.</p>
 
